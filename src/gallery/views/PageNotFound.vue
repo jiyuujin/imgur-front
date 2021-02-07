@@ -13,22 +13,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.page-not-found {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &__image {
-    display: block;
-    margin: auto;
-    max-width: 800px;
-  }
-
-  &__link {
-    font-size: 1.5rem;
-    color: #74d2e7;
-    text-decoration: none;
-    cursor: pointer;
-  }
-}
+@import '@/assets/scss/page_not_found';
 </style>

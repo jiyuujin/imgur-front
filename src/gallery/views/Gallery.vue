@@ -9,7 +9,7 @@
         v-for="galleryImage in displayedFavoriteImages"
         :key="galleryImage.id"
         :to="{
-          name: 'img-details',
+          name: 'gallery-detail',
           params: { id: galleryImage.id, galleryImage }
         }"
         :title="galleryImage.description"

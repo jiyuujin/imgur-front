@@ -46,7 +46,7 @@
 
 <script>
 export default {
-  name: 'GalleryImgDetails',
+  name: 'GalleryDetail',
   props: {
     galleryImage: {
       type: Object,
