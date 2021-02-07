@@ -1,3 +1,5 @@
+import { Commit } from 'vuex'
+
 import {
   getFavoriteImages,
   getImageDetails
@@ -7,6 +9,20 @@ import {
   SORTS_DEFAULT,
   WINDOWS_DEFAULT
 } from '@/gallery/constant'
+
+import { FavoriteTypes } from '@/gallery/models/favorite.model'
+import { ImageTypes } from '@/gallery/models/image.model'
+
+export interface MyState {
+  favoriteImages: Array<FavoriteTypes>
+  imageDetails: ImageTypes
+  filtersData: {
+    selectedSection: string | undefined
+    selectedSort: string | undefined
+    selectedWindow: string | undefined
+    showViral: boolean | undefined
+  }
+}
 
 export default {
   namespaced: true,
@@ -21,20 +37,20 @@ export default {
     }
   },
   actions: {
-    async getFavoriteItems({ commit, state }) {
+    async getFavoriteItems({ commit }: { commit: Commit }) {
       const data = await getFavoriteImages()
-      commit('setFavoriteImages', data, state.filtersData)
+      commit('setFavoriteImages', data)
     },
-    async getImageDetails({ commit }, imageId: string) {
+    async getImageDetails({ commit }: { commit: Commit }, imageId: string) {
       const data = await getImageDetails(imageId)
       commit('setImageDetails', data)
     }
   },
   mutations: {
-    setFavoriteImages(state, payload) {
+    setFavoriteImages(state: MyState, payload: Array<FavoriteTypes>) {
       state.favoriteImages = payload
     },
-    setImageDetails(state, payload) {
+    setImageDetails(state: MyState, payload: ImageTypes) {
       state.imageDetails = payload
     }
   }

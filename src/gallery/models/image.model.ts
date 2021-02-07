@@ -1,5 +1,34 @@
 import { get } from 'lodash-es'
 
+export type ImageTypes = {
+  account_id: number
+  account_url: string
+  ad_type: number
+  ad_url: string
+  animated: boolean
+  bandWidth: string | undefined
+  comment_count: number
+  datetime: string
+  description: string | null
+  downs: number
+  edited: number
+  favorite: boolean
+  favorite_count: number
+  has_sound: boolean
+  height: number
+  id: string
+  in_gallery: boolean
+  in_most_viral: string
+  is_ad: boolean
+  is_album: boolean
+  link: string
+  nsfw: string | null
+  points: number
+  score: string | null
+  section: string | null
+  size: number
+}
+
 class ImageModel {
   account_id: number
   account_url: string
