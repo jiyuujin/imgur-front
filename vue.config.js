@@ -1,5 +1,14 @@
+const path = require('path')
+
 module.exports = {
   publicPath: './',
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@': path.join(__dirname, 'src')
+      }
+    }
+  },
   css: {
     loaderOptions: {
       sass: {
