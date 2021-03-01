@@ -66,7 +66,10 @@ export default {
   },
   created() {
     if (!this.galleryImage) {
-      this.$store.dispatch('galleryStore/getImageDetails', this.id)
+      this.$store.dispatch(
+        'galleryStore/getImageDetails',
+        this.$route.params.id
+      )
     }
   }
 }

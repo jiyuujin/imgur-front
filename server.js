@@ -7,7 +7,7 @@ const app = express()
 const IMGUR_API = 'https://api.imgur.com/3'
 const port = 4000
 
-app.use(express.static('./public'))
+// app.use(express.static('./public'))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))

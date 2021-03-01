@@ -5,7 +5,7 @@ export default [
     component: () => import('./views/Gallery.vue')
   },
   {
-    path: '/gallery/:id',
+    path: '/:id',
     name: 'gallery-detail',
     component: () => import('./views/GalleryDetail.vue'),
     props: true
