@@ -11,11 +11,10 @@ import {
 } from '@/gallery/constant'
 
 import { FavoriteTypes } from '@/gallery/models/favorite.model'
-import { ImageTypes } from '@/gallery/models/image.model'
 
 export interface MyState {
   favoriteImages: Array<FavoriteTypes>
-  imageDetails: ImageTypes
+  imageDetails: FavoriteTypes
   filtersData: {
     selectedSection: string | undefined
     selectedSort: string | undefined
@@ -50,7 +49,7 @@ export default {
     setFavoriteImages(state: MyState, payload: Array<FavoriteTypes>) {
       state.favoriteImages = payload
     },
-    setImageDetails(state: MyState, payload: ImageTypes) {
+    setImageDetails(state: MyState, payload: FavoriteTypes) {
       state.imageDetails = payload
     }
   }
